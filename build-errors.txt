@@ -1,0 +1,28 @@
+> Task :compileApiJava NO-SOURCE
+> Task :processApiResources NO-SOURCE
+> Task :apiClasses UP-TO-DATE
+> Task :sourceMainJava
+
+> Task :compileJava
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+1 warning
+
+> Task :processResources
+> Task :classes
+> Task :jar
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :extractMcpData
+> Task :getVersionJsonIndex UP-TO-DATE
+> Task :getVersionJson
+> Task :extractUserDev
+> Task :genSrgs
+> Task :reobf
+> Task :assemble
+> Task :check UP-TO-DATE
+> Task :build
+
+BUILD SUCCESSFUL in 3s
+10 actionable tasks: 9 executed, 1 up-to-date

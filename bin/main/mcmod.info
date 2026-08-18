@@ -1,0 +1,14 @@
+[{
+    "modid": "elementarytech",
+    "name": "Elementary Tech",
+    "description": "Basic machines: Evaporators, Lead Oven, Bronze Tub, Handpumps, and Rubber Tree Resin Extraction.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [""],
+    "credits": "Based on IHL Tools & Machines",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": ["IC2"]
+}]

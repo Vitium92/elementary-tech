@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        maven { url = "https://repo1.maven.org/maven2/" }
+        maven { name = "forge"; url = "https://maven.minecraftforge.net/" }
+        maven { name = "sonatype"; url = "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+    dependencies {
+        classpath 'com.anatawa12.forge:ForgeGradle:1.2-1.1.1'
+    }
+}
+
+apply plugin: 'forge'
+
+version = "1.0.0"
+group = "elementarytech"
+archivesBaseName = "elementary-tech"
+
+minecraft {
+    version = "1.7.10-10.13.4.1614-1.7.10"
+    runDir = "eclipse"
+}
+
+repositories {
+    maven { name = "ic2"; url = "http://maven.ic2.player.to/" }
+    maven { name = "CodeChickenLib"; url = "http://files.minecraftforge.net/maven/codechicken/CodeChickenLib/1.7.2-1.1.0.76/" }
+}
+
+dependencies {
+    compile files('lib/industrialcraft-2-2.2.790-experimental-dev.jar')
+    compile files('lib/gregtech_1.7.10-6.04.10-dev.jar')
+    compile files('lib/CodeChickenCore-1.7.10-1.0.4.29-dev.jar')
+    compile files('lib/NotEnoughItems-1.7.10-1.0.3.74-dev.jar')
+    compile files('lib/CodeChickenLib-1.7.10-1.1.3.140-dev.jar')
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
