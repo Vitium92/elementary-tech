@@ -28,7 +28,7 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
     public enum MachineType {
         SolarEvaporator,
         LeadOven,
-        BronzeTub
+        BronzeVat
     }
 
     private static ETMachineBaseBlock[] machineBlocks = new ETMachineBaseBlock[MachineType.values().length];
@@ -48,6 +48,30 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
         this.setBlockName(type.name().substring(0, 1).toLowerCase() + type.name().substring(1));
     }
 
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
+
+    @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+    @Override
+    public int getLightOpacity() {
+        return 1;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side) {
+        Block block = world.getBlock(x, y, z);
+        if (block == this) {
+            return false;
+        }
+        return super.shouldSideBeRendered(world, x, y, z, side);
+    }
+    
     public MachineType getMachineType() {
         return machineType;
     }
@@ -72,8 +96,8 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
                 return SolarEvaporatorTileEntity.class;
             case LeadOven:
                 return elementarytech.machines.leadoven.LeadOvenTileEntity.class;
-            case BronzeTub:
-                return elementarytech.machines.bronzetub.BronzeTubTileEntity.class;
+            case BronzeVat:
+                return elementarytech.machines.bronzevat.BronzeVatTileEntity.class;
             default:
                 return SolarEvaporatorTileEntity.class;
         }
@@ -105,8 +129,8 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
                 return new SolarEvaporatorTileEntity();
             case LeadOven:
                 return new elementarytech.machines.leadoven.LeadOvenTileEntity();
-            case BronzeTub:
-                return new elementarytech.machines.bronzetub.BronzeTubTileEntity();
+            case BronzeVat:
+                return new elementarytech.machines.bronzevat.BronzeVatTileEntity();
             default:
                 return new SolarEvaporatorTileEntity();
         }
@@ -145,14 +169,14 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
                 this.textureBottom = reg.registerIcon(prefix + "leadOvenBottom");
                 this.textureBack = reg.registerIcon(prefix + "leadOvenBack");
                 break;
-            case BronzeTub:
-                this.blockIcon = reg.registerIcon(prefix + "bronzeTubFront");
-                this.textureFrontActive = reg.registerIcon(prefix + "bronzeTubFrontActive");
-                this.textureSide = reg.registerIcon(prefix + "bronzeTubSide");
-                this.textureTop = reg.registerIcon(prefix + "bronzeTubTop");
-                this.textureBottom = reg.registerIcon(prefix + "bronzeTubBottom");
-                this.innerSideIcon = reg.registerIcon(prefix + "bronzeTubInnerSide");
-                this.innerBottomIcon = reg.registerIcon(prefix + "bronzeTubInnerBottom");
+            case BronzeVat:
+                this.blockIcon = reg.registerIcon(prefix + "bronzeVatFront");
+                this.textureFrontActive = reg.registerIcon(prefix + "bronzeVatFrontActive");
+                this.textureSide = reg.registerIcon(prefix + "bronzeVatSide");
+                this.textureTop = reg.registerIcon(prefix + "bronzeVatTop");
+                this.textureBottom = reg.registerIcon(prefix + "bronzeVatBottom");
+                this.innerSideIcon = reg.registerIcon(prefix + "bronzeVatInnerSide");
+                this.innerBottomIcon = reg.registerIcon(prefix + "bronzeVatInnerBottom");
                 break;
         }
     }
@@ -162,7 +186,7 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
         switch (machineType) {
             case SolarEvaporator:
                 return this.textureSide;
-            case BronzeTub:
+            case BronzeVat:
                 return this.textureSide;
             default:
                 return this.blockIcon;
@@ -211,8 +235,8 @@ public class ETMachineBaseBlock extends Block implements ITileEntityProvider {
         switch (side) {
             case 0: return this.textureBottom;
             case 1: return this.textureTop;
-            case 2: return this.blockIcon;
-            case 3: return this.textureSide;
+            case 2: return this.textureBack != null ? this.textureBack : this.textureSide;
+            case 3: return this.blockIcon;
             case 4: return this.textureSide;
             case 5: return this.textureSide;
             default: return this.textureSide;

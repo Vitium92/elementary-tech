@@ -4,16 +4,16 @@ import java.awt.Rectangle;
 import java.util.Map;
 
 import codechicken.lib.gui.GuiDraw;
-import elementarytech.machines.bronzetub.BronzeTubGui;
-import elementarytech.machines.bronzetub.BronzeTubTileEntity;
+import elementarytech.machines.bronzevat.BronzeVatGui;
+import elementarytech.machines.bronzevat.BronzeVatTileEntity;
 import elementarytech.recipe.UniversalRecipeInput;
 import elementarytech.recipe.UniversalRecipeOutput;
 import net.minecraft.client.gui.inventory.GuiContainer;
 
-public class ImpregnatingMachineRecipeHandler extends MachineRecipeHandler {
+public class BronzeVatRecipeHandler extends MachineRecipeHandler {
     @Override
     public Class<? extends GuiContainer> getGuiClass() {
-        return BronzeTubGui.class;
+        return BronzeVatGui.class;
     }
 
     @Override
@@ -58,17 +58,17 @@ public class ImpregnatingMachineRecipeHandler extends MachineRecipeHandler {
 
     @Override
     public String getRecipeId() {
-        return "elementarytech.impregnatingMachine";
+        return "elementarytech.bronzeVat";
     }
 
     @Override
     public String getGuiTexture() {
-        return "elementarytech:textures/gui/GUITubBronze.png";
+        return "elementarytech:textures/gui/GUITubVat.png";
     }
 
     @Override
     public String getOverlayIdentifier() {
-        return "impregnatingMachine";
+        return "bronzeVat";
     }
 
     @Override
@@ -84,6 +84,6 @@ public class ImpregnatingMachineRecipeHandler extends MachineRecipeHandler {
 
     @Override
     public Map<UniversalRecipeInput, UniversalRecipeOutput> getRecipeList() {
-        return BronzeTubTileEntity.getRecipes();
+        return BronzeVatTileEntity.getRecipes();
     }
 }

@@ -1,4 +1,4 @@
-package elementarytech.machines.bronzetub;
+package elementarytech.machines.bronzevat;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,9 +34,9 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
 
-public class BronzeTubTileEntity extends TileEntityInventory implements IHasGui, IFluidTankVisual, IFluidHandler {
+public class BronzeVatTileEntity extends TileEntityInventory implements IHasGui, IFluidTankVisual, IFluidHandler {
 
-    private final static UniversalRecipeManager recipeManager = new UniversalRecipeManager("tub");
+    private final static UniversalRecipeManager recipeManager = new UniversalRecipeManager("vat");
     public final ApparatusProcessableInvSlot input;
     public final ETInvSlotOutput outputSlot;
     public final InvSlotConsumableLiquidET drainInputSlot;
@@ -49,7 +49,7 @@ public class BronzeTubTileEntity extends TileEntityInventory implements IHasGui,
     public int visibleFluidId = -1;
     public int visibleFluidAmount = 1;
 
-    public BronzeTubTileEntity() {
+    public BronzeVatTileEntity() {
         super();
         this.outputSlot = new ETInvSlotOutput(this, "output", 0, 2);
         this.drainInputSlot = new InvSlotConsumableLiquidET(this, "drainInput", -1, InvSlot.Access.I, 1,
@@ -81,7 +81,7 @@ public class BronzeTubTileEntity extends TileEntityInventory implements IHasGui,
 
     @Override
     public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-        return ETUtils.getThisModItemStack("tubBronze");
+        return ETUtils.getThisModItemStack("BronzeVat");
     }
 
     public boolean enableUpdateEntity() {
@@ -155,7 +155,7 @@ public class BronzeTubTileEntity extends TileEntityInventory implements IHasGui,
 
     @Override
     public String getInventoryName() {
-        return "impregnatingMachine";
+        return "bronzeVat";
     }
 
     public float getRenderLiquidLevel() {
@@ -169,13 +169,13 @@ public class BronzeTubTileEntity extends TileEntityInventory implements IHasGui,
     @Override
     @SideOnly(Side.CLIENT)
     public GuiScreen getGui(EntityPlayer player, boolean arg1) {
-        return new BronzeTubGui(new BronzeTubContainer(player, this));
+        return new BronzeVatGui(new BronzeVatContainer(player, this));
     }
 
     @Override
     public ContainerBase<?> getGuiContainer(EntityPlayer player) {
         this.fluidTank.sortFluidsByDensity();
-        return new BronzeTubContainer(player, this);
+        return new BronzeVatContainer(player, this);
     }
 
     @Override

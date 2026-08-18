@@ -100,11 +100,11 @@ public class ElementaryTech {
         GameRegistry.registerBlock(sackBlock, "sackBlock");
         GameRegistry.registerTileEntity(SackTileEntity.class, "sackTileEntity");
 
-        handpump = new HandPump();
+        handpump = new HandPump().setUnlocalizedName("elementarytech.handpump");
         GameRegistry.registerItem(handpump, "Handpump");
 
-        advancedHandpump = new AdvancedHandPump();
-        GameRegistry.registerItem(advancedHandpump, advancedHandpump.getUnlocalizedName());
+        advancedHandpump = new AdvancedHandPump().setUnlocalizedName("elementarytech.advancedHandpump");
+        GameRegistry.registerItem(advancedHandpump, "AdvancedHandpump");
 
         MinecraftForge.EVENT_BUS.register(new ETBucketHandler());
         proxy.load();

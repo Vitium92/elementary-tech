@@ -3,17 +3,16 @@ package elementarytech.render;
 import org.lwjgl.opengl.GL11;
 
 import elementarytech.interfaces.IFluidTankVisual;
-import elementarytech.model.FluidRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-public class BronzeTubRender extends TileEntitySpecialRenderer {
+public class BronzeVatRender extends TileEntitySpecialRenderer {
 
     private float cap;
 
-    public BronzeTubRender(float capIn) {
+    public BronzeVatRender(float capIn) {
         cap = capIn;
     }
 

@@ -4,7 +4,7 @@ import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
 import codechicken.nei.api.ItemInfo;
 import elementarytech.ModInfo;
-import elementarytech.machines.bronzetub.BronzeTubGui;
+import elementarytech.machines.bronzevat.BronzeVatGui;
 import elementarytech.machines.evaporator.ElectricEvaporatorGui;
 import elementarytech.machines.evaporator.EvaporatorGui;
 import elementarytech.machines.leadoven.LeadOvenGui;
@@ -21,9 +21,9 @@ public class NEIETConfig implements IConfigureNEI {
         API.registerRecipeHandler(new LeadOvenRecipeHandler());
         API.registerUsageHandler(new LeadOvenRecipeHandler());
         API.registerGuiOverlay(LeadOvenGui.class, "leadOven", 5, 11);
-        API.registerRecipeHandler(new ImpregnatingMachineRecipeHandler());
-        API.registerUsageHandler(new ImpregnatingMachineRecipeHandler());
-        API.registerGuiOverlay(BronzeTubGui.class, "impregnatingMachine", 5, 11);
+        API.registerRecipeHandler(new BronzeVatRecipeHandler());
+        API.registerUsageHandler(new BronzeVatRecipeHandler());
+        API.registerGuiOverlay(BronzeVatGui.class, "bronzeVat", 5, 11);
     }
 
     @Override

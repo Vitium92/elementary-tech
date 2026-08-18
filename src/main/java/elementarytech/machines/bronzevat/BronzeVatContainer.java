@@ -1,4 +1,4 @@
-package elementarytech.machines.bronzetub;
+package elementarytech.machines.bronzevat;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraftforge.fluids.FluidStack;
 
-public class BronzeTubContainer extends ContainerBase<BronzeTubTileEntity> {
+public class BronzeVatContainer extends ContainerBase<BronzeVatTileEntity> {
 
-    protected BronzeTubTileEntity tileEntity;
+    protected BronzeVatTileEntity tileEntity;
     public int lastVisibleFluidId = -1;
     public int lastVisibleFluidAmount = -1;
     public short lastProgress = -1;
@@ -20,7 +20,7 @@ public class BronzeTubContainer extends ContainerBase<BronzeTubTileEntity> {
     private final static int height = 166;
     public List<FluidStack> fluidList;
 
-    public BronzeTubContainer(EntityPlayer entityPlayer, BronzeTubTileEntity tileEntity1) {
+    public BronzeVatContainer(EntityPlayer entityPlayer, BronzeVatTileEntity tileEntity1) {
         super(tileEntity1);
         this.tileEntity = tileEntity1;
         fluidList = this.tileEntity.getFluidTank().getFluidList();

@@ -1,7 +1,7 @@
 [{
     "modid": "elementarytech",
     "name": "Elementary Tech",
-    "description": "Basic machines: Evaporators, Lead Oven, Bronze Tub, Handpumps, and Rubber Tree Resin Extraction.",
+    "description": "Basic machines: Evaporators, Lead Oven, Bronze Vat, Handpumps, and Rubber Tree Resin Extraction.",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",

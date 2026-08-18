@@ -10,10 +10,10 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import elementarytech.machinebase.ETMachineBaseBlock.MachineType;
-import elementarytech.machines.bronzetub.BronzeTubTileEntity;
+import elementarytech.machines.bronzevat.BronzeVatTileEntity;
 import elementarytech.machines.evaporator.SolarEvaporatorTileEntity;
-import elementarytech.render.BronzeTubBlockRender;
-import elementarytech.render.ImpregnatingMachineRender;
+import elementarytech.render.BronzeVatBlockRender;
+import elementarytech.render.BronzeVatRender;
 import elementarytech.tree.BlobEntityFX;
 import elementarytech.tree.BlobRenderFX;
 import elementarytech.tree.SackRender;
@@ -38,15 +38,15 @@ public class ClientProxy extends ServerProxy {
             channel.register(this);
         }
 
-        // Register ISBRH for BronzeTub and SolarEvaporator
-        BronzeTubBlockRender bronzeTubBlockRender = new BronzeTubBlockRender();
-        RenderingRegistry.registerBlockHandler(bronzeTubBlockRender);
-        blockRendererMap.put(MachineType.BronzeTub, bronzeTubBlockRender.getRenderId());
-        blockRendererMap.put(MachineType.SolarEvaporator, bronzeTubBlockRender.getRenderId());
+        // Register ISBRH for BronzeVat and SolarEvaporator
+        BronzeVatBlockRender bronzeVatBlockRender = new BronzeVatBlockRender();
+        RenderingRegistry.registerBlockHandler(bronzeVatBlockRender);
+        blockRendererMap.put(MachineType.BronzeVat, bronzeVatBlockRender.getRenderId());
+        blockRendererMap.put(MachineType.SolarEvaporator, bronzeVatBlockRender.getRenderId());
 
         // Bind TESRs
-        TileEntitySpecialRenderer tubRender = new ImpregnatingMachineRender(900f);
-        ClientRegistry.bindTileEntitySpecialRenderer(BronzeTubTileEntity.class, tubRender);
+        TileEntitySpecialRenderer tubRender = new BronzeVatRender(900f);
+        ClientRegistry.bindTileEntitySpecialRenderer(BronzeVatTileEntity.class, tubRender);
         ClientRegistry.bindTileEntitySpecialRenderer(SolarEvaporatorTileEntity.class, tubRender);
         ClientRegistry.bindTileEntitySpecialRenderer(SackTileEntity.class, new SackRender());
 

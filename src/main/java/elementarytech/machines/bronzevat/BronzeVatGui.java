@@ -1,4 +1,4 @@
-package elementarytech.machines.bronzetub;
+package elementarytech.machines.bronzevat;
 
 import org.lwjgl.opengl.GL11;
 
@@ -9,11 +9,11 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.util.ResourceLocation;
 
 @SideOnly(Side.CLIENT)
-public class BronzeTubGui extends GuiContainer {
-	private static final ResourceLocation background = new ResourceLocation("elementarytech", "textures/gui/GUITubBronze.png");
-	private BronzeTubContainer container;
+public class BronzeVatGui extends GuiContainer {
+	private static final ResourceLocation background = new ResourceLocation("elementarytech", "textures/gui/GUITubVat.png");
+	private BronzeVatContainer container;
 
-	public BronzeTubGui(BronzeTubContainer container1) {
+	public BronzeVatGui(BronzeVatContainer container1) {
 		super(container1);
 		this.container = container1;
 	}

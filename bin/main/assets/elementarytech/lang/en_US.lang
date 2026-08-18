@@ -2,25 +2,25 @@ tile.evaporatorBlock.name=Solid Fuel Evaporator
 tile.electricEvaporatorBlock.name=Electric Evaporator
 tile.solarEvaporator.name=Solar Evaporator
 tile.leadOven.name=Lead Oven
-tile.bronzeTub.name=Bronze Tub
+tile.bronzeVat.name=Bronze Vat
 tile.sackBlock.name=Sack
 tile.rubberTreeBlock.name=Incised Rubber Log
 tile.spruceTreeBlock.name=Incised Spruce Log
 
-item.bronzeTub.name=Bronze Tub
+item.bronzeVat.name=Bronze Vat
 item.solarEvaporator.name=Solar Evaporator
 item.leadOven.name=Lead Oven
-item.elementarytech.handpump.name=Electric Hand Pump
-item.elementarytech.advancedHandpump.name=Advanced Electric Hand Pump
+item.elementarytech.handpump.name=Electric Handpump
+item.elementarytech.advancedHandpump.name=Advanced Electric Handpump
 
 container.evaporator=Solid Fuel Evaporator
 container.electricEvaporator=Electric Evaporator
 container.solarEvaporator=Solar Evaporator
 container.leadOven=Lead Oven
-container.impregnatingMachine=Bronze Tub
+container.bronzeVat=Bronze Vat
 
 elementarytech.solarEvaporator=Solar Evaporator
 elementarytech.electricEvaporator=Electric Evaporator
 elementarytech.evaporator=Solid Fuel Evaporator
-elementarytech.impregnatingMachine=Bronze Tub
+elementarytech.bronzeVat=Bronze Vat
 elementarytech.leadOven=Lead Oven
